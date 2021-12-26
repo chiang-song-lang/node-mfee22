@@ -1,4 +1,8 @@
+let name= "lang";
+console.log(`Hello Node from ${name}`);
 
-let name ="lang";
+setTimeout(function(){
+    console.log("Timeout")
+},1000)
 
-console.log(`Hello Node ${name}`);
+console.log("before Timeout")
