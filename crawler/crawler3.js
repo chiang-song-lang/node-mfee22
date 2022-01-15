@@ -1,7 +1,5 @@
 const axios = require("axios");
-const {
-    readFile
-} = require("fs/promise");
+const readFile = require('fs/promise');
 
 (async () => {
     try {
