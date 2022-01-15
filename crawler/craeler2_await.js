@@ -1,11 +1,24 @@
 const axios = require("axios");
+
 (async () => {
   try {
-    let data = await axios.get(
-      "https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20220109&stockNo=2330&_=1641716316315"
+    let stockNo = 2330;
+    let queryDate = "20220115";
+
+
+
+    let response = await axios.get(
+      "https://www.twse.com.tw/exchangeReport/STOCK_DAY",
+      {
+        params: {
+          response: "json",
+          data: queryDate,
+          stockNo,
+        },
+      },
     );
-    console.log(data);
-  } catch (err) {
-    console.error(err);
+    console.log(response.date);
+  }catch(e){
+    console.error(e)
   }
 })();
