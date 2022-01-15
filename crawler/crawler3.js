@@ -1,20 +1,20 @@
 const axios = require("axios");
-const readFile = require('fs/promise');
+const {readFile} = require('fs/promises');
 
 (async () => {
     try {
         let stockNo = await readFile('stock.txt', 'utf-8');
-        let queryDate = "20220115";
+        let queryDate = "20220110";
         let response = await axios.get(
             "https://www.twse.com.tw/exchangeReport/STOCK_DAY", {
                 params: {
                     response: "json",
-                    data: queryDate,
+                    date: queryDate,
                     stockNo,
                 },
             },
         );
-        console.log(response.date);
+        console.log(response.data);
     } catch (error) {
         console.log(error)
     }
