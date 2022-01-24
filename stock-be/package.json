@@ -1,8 +1,8 @@
 {
-  "name": "simple-web",
+  "name": "stock-be",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^12.0.3"
+    "cors": "^2.8.5",
+    "dotenv": "^12.0.3",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "pug": "^3.0.2"
   }
 }

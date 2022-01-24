@@ -6,23 +6,20 @@
   <body>
     <button id="asyncBtn">非同步</button>
     <div id="response">message</div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       var responseDom = document.getElementById("response");
 
       var asyncBtn = document.getElementById("asyncBtn");
       asyncBtn.addEventListener("click", function () {
         responseDom.innerText = "開始「非」同步請求";
-        $.ajax("http://34.221.173.92:3000/data", { method: "GET" })
-          .done((order) => {
-            console.log(order);
+        axios
+          .get("http://34.221.173.92:3000/data")
+          .then((response) => {
+            console.log(response.data);
           })
-          .fail((xhr, status) => {
-            console.error(`發生錯誤 ${status}`);
+          .catch((err) => {
+            console.error(err);
           });
       });
     </script>
